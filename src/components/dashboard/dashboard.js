@@ -1,15 +1,14 @@
 import React from 'react';
-import LineChart from '../lineChart/lineChart';
-import BarChart from '../barChart/barChart';
-import AreaChart from '../areaChart/areaChart';
-import PieChart from '../pieChart/pieChart';
 
-import { IoMdRefreshCircle } from "react-icons/io";
-
-function DashboardPage() {
+function dashboard() {
     return (
         <div className="dashboard">
-            <div className="info">Welcome to Dashboard</div>
+
+            {/* <div className="row"> */}
+                <div className="info">
+                    Welcome to Dashboard
+            {/* </div> */}
+            </div>
             <div className="box1">
                 <p>Total Hits</p>
                 <p className="p1">1000</p>
@@ -25,14 +24,10 @@ function DashboardPage() {
                 <p>Total Hits</p>
                 <p className="p4">1000</p>
             </div>
-            <div className="graph1">
-            <LineChart />
-            </div>
-            <div className="graph2">
-            <BarChart />
-            </div>
+            <div className="graph1"></div>
+            <div className="graph2"></div>
         </div>
     );
 }
 
-export default DashboardPage;
+export default dashboard;

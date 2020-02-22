@@ -22,7 +22,8 @@ module.exports = {
     devtool: 'inline-source-map',
     //used to recompile or live reloading
     devServer: {
-        contentBase: './src'
+        contentBase: './src',
+        historyApiFallback: true,
     },
     module: {
         rules: [

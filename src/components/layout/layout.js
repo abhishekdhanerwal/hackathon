@@ -2,6 +2,8 @@ import React from 'react';
 import Sidebar from '../sidebar/sidebar';
 
 import {Route, Switch, Redirect} from 'react-router-dom';
+import { IoMdRefreshCircle } from "react-icons/io";
+import Dashboard from '../dashboard/dashboard';
 
 import DashboardPage from '../dashboardPage/dashboardPage';
 import MonitorPage from '../monitorPage/monitorPage';

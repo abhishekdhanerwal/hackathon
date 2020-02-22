@@ -1,0 +1,27 @@
+.logpage{
+    height: 100vh;
+    display: grid;
+    grid-row-gap: 10px;
+    grid-template-rows: 60px auto;
+    .info{
+        grid-column: 1/-1;
+        padding:20px;
+        border: 1px solid #ddd;
+        box-shadow: 2px 2px #ddd;
+        max-height: 60px;
+    }
+    .findlogs{
+        grid-column: 1/-1;
+        padding:20px;
+        border: 1px solid #ddd;
+        box-shadow: 2px 2px #ddd;
+    }
+    .tableContainer{
+        grid-column: auto;
+    }
+    .logsearch{
+        padding:20px;
+        border: 1px solid #ddd;
+        box-shadow: 2px 2px #ddd;
+    }
+}

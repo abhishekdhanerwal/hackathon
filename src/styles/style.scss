@@ -1,14 +1,20 @@
 @import './layout.scss';
 @import './sidebar.scss';
+@import './dashboard.scss';
+@import './logPage.scss';
+@import './report.scss';
 
 * {
     margin:0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: "lato",sans-serif;
     font-weight: 400;
     font-size: 16px;
+    height: 100%;
+    width: 100%;
     line-height:1.7;
 }

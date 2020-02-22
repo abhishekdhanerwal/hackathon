@@ -1,9 +1,12 @@
 .main-div {
     width: 100%;
+    height:auto;
     display: grid;
-    grid-auto-rows: 70px 100vh;
-    // grid-template-rows:70px 90vh;
-    grid-template-columns: 18vw 82vw;
+    position: relative;
+    overflow:auto;
+    margin:0 auto;
+    grid-template-rows: 70px 1fr;
+    grid-template-columns: 18vw 1fr;
     .header{
         grid-row: 1/2;
         grid-column: 1/-1;
@@ -16,16 +19,12 @@
             font-family: 'Akronim';
             font-size:30px;
             font-weight: 400px;
-            margin-left: 15px;
+            margin-left: 25px;
         }
     }
     .main-content{
         // background-color: #f7f7f8;
         background-color: #f7f7f8;
-        padding:30px;
-        display: grid;
-        grid-template-rows: repeat(2,1fr);
-        grid-template-columns: repeat(2,1fr);
-        grid-gap: 20px;
+        padding:10px;
     }
 }
