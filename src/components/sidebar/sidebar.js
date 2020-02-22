@@ -8,10 +8,10 @@ function Sidebar(){
     return(
         <div className="sidebar">
             <ul className="sidebarlist">
-                <Link to="/" className="item active"><li>Dashboard</li></Link>
-                <Link to="/monitor" className="item"><li >Health/Monitoring</li></Link>
-                <Link to="/reports" className="item"><li>Reports</li></Link>
-                <Link to="/logs" className="item"><li>Logs</li></Link>
+                <Link to="/" className="item" activeClassName="active"><li>Dashboard</li></Link>
+                {/* <Link to="/monitor" className="item"><li >Health/Monitoring</li></Link> */}
+                <Link to="/reports" className="item" activeClassName="active"><li>Reports</li></Link>
+                <Link to="/logs" className="item" activeClassName="active"><li>Logs</li></Link>
             </ul>
         </div>
     );

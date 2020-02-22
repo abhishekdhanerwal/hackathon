@@ -3,27 +3,32 @@ import LineChart from '../lineChart/lineChart';
 import BarChart from '../barChart/barChart';
 import AreaChart from '../areaChart/areaChart';
 import PieChart from '../pieChart/pieChart';
+import { IoMdRefreshCircle } from "react-icons/io";
 
 function ReportsPage() {
     return (
        <div className="container">
+            <div className="row"  style={{padding:"10px",border:"1px solid #ddd", boxShadow:"2px 2px #ddd"}}>
+                <p style={{fontSize:"18px",fontWeight:"450"}}>Reports</p>
+            </div>
             <div className="row">
-                <div className="col-sm-6 col-md-5" style={{border:"1px solid #ddd",boxShadow:"2px 2px #ddd",margin:"5px"}}>
+                <div className="col-sm-6" style={{border:"1px solid #ddd",boxShadow:"2px 2px #ddd",margin:"8px",maxWidth:"523px"}}>
                     F<LineChart />
                 </div>
-                <div className="col-sm-6 col-md-5" style={{border:"1px solid #ddd",boxShadow:"2px 2px #ddd",margin:"5px"}}>
+                <div className="col-sm-6" style={{border:"1px solid #ddd",boxShadow:"2px 2px #ddd",margin:"8px",maxWidth:"523px"}}>
                 <AreaChart />
                 </div>
             </div>
             <div className="row">
-                <div className="col-sm-6 col-md-5" style={{border:"1px solid #ddd",boxShadow:"2px 2px #ddd",margin:"5px"}}>
+                <div className="col-sm-6" style={{border:"1px solid #ddd",boxShadow:"2px 2px #ddd",margin:"8px",maxWidth:"523px"}}>
                 <PieChart />
                 </div>
-                <div className="col-sm-6 col-md-5" style={{border:"1px solid #ddd",boxShadow:"2px 2px #ddd",margin:"5px"}}>
+                <div className="col-sm-6" style={{border:"1px solid #ddd",boxShadow:"2px 2px #ddd",margin:"8px",maxWidth:"523px"}}>
                 <BarChart />
                 </div>
             </div>
        </div>
+
     );
 }
 

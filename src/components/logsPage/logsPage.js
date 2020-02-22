@@ -5,7 +5,7 @@ function LogsPage() {
     return (
         <div className="logpage">
             <div className="info">
-                Logs
+                <p style={{fontSize:"18px",fontWeight:"450"}}>Logs</p>
             </div>
             <div className="logsearch">
                 {/* <form style={{ display: "inline-block" }}>
@@ -26,15 +26,15 @@ function LogsPage() {
                 <div className="form">
                     <div className="row" style={{marginBottom:"20px"}}>
                         <div className="form-group col-sm-4 col-md-4" style={{textAlign:"center"}}>
-                            <label>From*</label>
+                            <label style={{float:"left"}}>From*</label>
                             <input type="datetime-local" className="form-control" id="from" />
                         </div>
                         <div className="form-group col-sm-4 col-md-4" style={{textAlign:"center"}}>
-                            <label>To*</label>
+                            <label style={{float:"left"}}>To*</label>
                             <input type="datetime-local" className="form-control" id="to" />
                         </div>
                         <div className="form-group col-sm-4 col-md-4" style={{textAlign:"center"}}>
-                            <label>Log Type</label>
+                            <label style={{float:"left"}}>Log Type</label>
                             <select className="form-control" id="logtype">
                                 <option>Error</option>
                                 <option>Info</option>
@@ -44,9 +44,9 @@ function LogsPage() {
                             </select>
                         </div>
                     </div>
-                    <div className="form-row" style={{marginBottom:"-20px"}}>
+                    <div className="form-row">
                         <div className="col" style={{textAlign:"center"}}>
-                            <input type="button" className="btn btn-primary" value="Search logs" />
+                            <input type="button" className="btn btn-primary" value="Search logs"  style={{marginBottom:"10px"}} />
                         </div>
                     </div>
                 </div>

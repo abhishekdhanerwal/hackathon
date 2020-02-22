@@ -16,7 +16,7 @@ export default class PieChartLayout extends PureComponent {
 
   render() {
     return (
-      <PieChart width={800} height={400} onMouseEnter={this.onPieEnter}>
+      <PieChart width={500} height={400} onMouseEnter={this.onPieEnter}>
         <Pie
           data={data}
           cx={120}
