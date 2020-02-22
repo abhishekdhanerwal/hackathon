@@ -5,13 +5,19 @@
     ul{
         width:100%;
         text-align: center;
-        li{
+        .item{
             display: block;
             padding:15px;
             color:white;
             text-transform: uppercase;
         }
-        li:hover{
+        .item:hover{
+            background-color: tomato;
+            transform-origin: left;
+            transition: background-color 0.25s;
+            clip-path: polygon(0 0, 82% 0, 100% 100%, 0% 100%);
+        }
+        .active{
             background:tomato;
             width: 100%;
             transform-origin: left;

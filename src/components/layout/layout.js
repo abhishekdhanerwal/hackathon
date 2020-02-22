@@ -12,7 +12,9 @@ function Layout(){
 
     return (
         <div className="main-div">
-            <div className="header">Header</div>
+            <div className="header">
+                <span className="logo">Team X Diff</span>
+            </div>
             <Sidebar/>
             <div className="main-content">
                 
