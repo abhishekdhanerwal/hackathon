@@ -8,10 +8,15 @@ const webpackConfig = require('./webpack.config.dev');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const compiler =  webpack(webpackConfig);
 
-const app = express();
+// const connectDb = require('./database');
 
+
+const app = express();
+// const dashboardRouter = require('./dashboard')();
 
 app.use(bodyParser.json({limit: '6mb'}));
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(compression());
 
 
@@ -21,6 +26,12 @@ app.use(webpackDevMiddleware(compiler, {
   }));
 
 app.use(require('webpack-hot-middleware')(compiler));
+
+// (async () => {
+//   await connectDb();
+// })();
+
+// app.use('/dashboardReport', dashboardRouter);
 
 
 app.listen(port,function(){
