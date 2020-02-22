@@ -1,10 +1,11 @@
 import React from 'react';
+import Sidebar from '../sidebar/sidebar';
 
 function Layout(){
     return (
-        <div className="container">
+        <div className="main-div">
             <div className="header">Header</div>
-            <div className="sidebar">SideBar</div>
+            <Sidebar/>
             <div className="main-content">
                 <div className="card">Card 1</div>
             </div>

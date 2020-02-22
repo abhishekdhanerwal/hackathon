@@ -47,6 +47,18 @@ module.exports = {
                 ]
             },
             {
+                test: /\.css$/,
+                exclude:/node_modules/,
+                use: [
+                  {
+                    loader: "style-loader" // creates style nodes from JS strings
+                  },
+                  {
+                    loader: "css-loader" // translates CSS into CommonJS
+                  }
+                ]
+            },
+            {
                 test: /\.(ico|icon|eot|woff|woff2|ttf|otf)$/,
                 exclude: /node_modules/,
                 use: 'file-loader'
