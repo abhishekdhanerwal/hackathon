@@ -2,6 +2,7 @@ const express = require('express');
 const dashboardRouter = express.Router();
 const request =  require("request");
 
+const UserModel = require('./models/events.model');
 
 const httpRequest = function(_url, _headers, _req, isIllustration) {
   return new Promise(function(resolve, reject){
@@ -28,9 +29,16 @@ const httpRequest = function(_url, _headers, _req, isIllustration) {
 
 
 function router() {
-  dashboardRouter.route('/')
-    .get((req, res) => {
-      res.render();
+  dashboardRouter.route('/counts')
+    .get(async (req, res) => {
+      const list = await UserModel.find().exec();
+      console.log(list);
+      res.status(200).json({
+        total:12000,
+        pass:2300,
+        failed:200,
+        pending:230
+      });
     });
 
   dashboardRouter.route('/single')
