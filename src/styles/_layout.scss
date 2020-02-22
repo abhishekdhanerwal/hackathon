@@ -1,0 +1,28 @@
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-rows:70px 90vh;
+    grid-template-columns: 18vw 82vw;
+    background-color:red;
+    .header{
+        grid-row: 1/2;
+        grid-column: 1/-1;
+        // background-color:#2A4747;
+        // background-color: #58748b;
+        background-color: #15232d;;
+    }
+    .sidebar{
+        grid-row: 2/3;
+        // background-color: #61D095;
+        background-color: #58748b;
+    }
+    .main-content{
+        // background-color: #f7f7f8;
+        background-color: #f7f7f8;
+        padding:30px;
+        display: grid;
+        grid-template-rows: repeat(2,1fr);
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 20px;
+    }
+}
