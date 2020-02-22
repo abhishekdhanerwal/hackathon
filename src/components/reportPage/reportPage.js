@@ -9,7 +9,7 @@ function ReportsPage() {
     return (
        <div className="container">
             <div className="row"  style={{padding:"10px",border:"1px solid #ddd", boxShadow:"2px 2px #ddd"}}>
-                <p style={{fontSize:"18px",fontWeight:"450"}}>Reports</p>
+                <p style={{fontSize:"20px",fontWeight:"500",marginBottom:"0px"}}>Reports</p>
             </div>
             <div className="row">
                 <div className="col-sm-6" style={{border:"1px solid #ddd",boxShadow:"2px 2px #ddd",margin:"8px",maxWidth:"523px"}}>

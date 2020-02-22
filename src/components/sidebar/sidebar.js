@@ -26,10 +26,10 @@ function Sidebar(){
     return(
         <div className="sidebar">
             <ul className="sidebarlist">
-                <Link to="/" className={dashClass} onClick={() => activeSidebar('dashClass')}><li>Dashboard</li></Link>
+                <Link to="/" className={dashClass} onClick={() => activeSidebar('dashClass')}><li><span style={{padding:"3px 8px",fontSize:"16px",fontWeight:"500",border:"1px solid #fff",marginLeft:"10px",float:"left",marginTop:"-3px"}}>D</span>Dashboard</li></Link>
                 {/* <Link to="/monitor" className={dashClass} onClick={() => activeSidebar('asd')}><li >Health/Monitoring</li></Link> */}
-                <Link to="/reports" className={repClass} onClick={() => activeSidebar('repClass')}><li>Reports</li></Link>
-                <Link to="/logs" className={logClass} onClick={() => activeSidebar('logClass')}><li>Logs</li></Link>
+                <Link to="/reports" className={repClass} onClick={() => activeSidebar('repClass')}><li><span style={{padding:"3px 8px",fontSize:"16px",fontWeight:"500",border:"1px solid #fff",marginLeft:"10px",float:"left",marginTop:"-3px"}}>R</span>Reports</li></Link>
+                <Link to="/logs" className={logClass} onClick={() => activeSidebar('logClass')}><li><span style={{padding:"3px 8px",fontSize:"16px",fontWeight:"500",border:"1px solid #fff",marginLeft:"10px",float:"left",marginTop:"-3px"}}>L</span>Logs</li></Link>
             </ul>
         </div>
     );

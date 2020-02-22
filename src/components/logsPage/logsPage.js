@@ -1,11 +1,24 @@
 import React from 'react';
 import DateTimePicker from 'react-datetime-picker';
+import Axios from 'axios'
 
 function LogsPage() {
+    
+    // const [logs,setLogs] = useState({});
+    
+    // useEffect(() => {
+    //     Axios.post()
+    //         .then(function(response){
+
+    //         }).catch(function(err){
+    //             console.log(err);
+    //         });
+    // });
+
     return (
         <div className="logpage">
             <div className="info">
-                <p style={{fontSize:"18px",fontWeight:"450"}}>Logs</p>
+                <p style={{fontSize:"20px",fontWeight:"500"}}>Logs</p>
             </div>
             <div className="logsearch">
                 {/* <form style={{ display: "inline-block" }}>
