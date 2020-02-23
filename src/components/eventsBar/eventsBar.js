@@ -8,25 +8,25 @@ import Spinner from '../spinner';
 
 const data = [
   {
-    name: 'Page A', passed: 2000, total: 2400, failed: 400,  amt: 2400,
+    name: '01 PM', passed: 2000, total: 2400, failed: 400,  amt: 2400,
   },
   {
-    name: 'Page B', passed: 1000, total: 1398, failed: 398,  amt: 2210,
+    name: '02 PM', passed: 1000, total: 1398, failed: 398,  amt: 2210,
   },
   {
-    name: 'Page C', passed: 9800, total: 9800, failed: 0, amt: 2290,
+    name: '03 PM', passed: 9800, total: 9800, failed: 0, amt: 2290,
   },
   {
-    name: 'Page D', passed: 3900, total: 3908, failed: 8, amt: 2000,
+    name: '04 PM', passed: 3900, total: 3908, failed: 8, amt: 2000,
   },
   {
-    name: 'Page E', passed: 1800, total: 4800, failed: 3000, amt: 2181,
+    name: '05 PM', passed: 1800, total: 4800, failed: 3000, amt: 2181,
   },
   {
-    name: 'Page F', passed: 2390, total: 3800, failed: 200, amt: 2500,
+    name: '06 PM', passed: 2390, total: 3800, failed: 200, amt: 2500,
   },
   {
-    name: 'Page G', passed: 3490, total: 4300, failed: 200, amt: 2100,
+    name: '07 PM', passed: 3490, total: 4300, failed: 200, amt: 2100,
   },
 ];
 

@@ -39,6 +39,13 @@ function router() {
       res.status(200).json(list);
     });
 
+  reportRouter.route('/getTaskGraphData')
+    .get(async (req, res) => {
+      const list = await ReportModel.find().exec();
+      console.log(list);
+      res.status(200).json(list);
+    });
+
     reportRouter.route('/cpu')
     .get(async (req, res) => {
       const Cpu = new CpuModel({
