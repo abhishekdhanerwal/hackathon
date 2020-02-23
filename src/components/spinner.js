@@ -8,14 +8,23 @@ import BeatLoader from 'react-spinners/BeatLoader';
 import PropTypes from 'prop-types';
  
 // Can be a string as well. Need to ensure each key-value pair ends with ;
-const override = css`
-    position: absolute;
-    bottom: 25%;
-    right: 57%;
-`;
+
  
 function Spinner(props) {
-
+  let override;
+    if(props.graph === 'bar'){
+      override = css`
+        position: absolute;
+        bottom: 51%;
+        right: 38%;
+    `;
+    } else if (props.graph === 'line'){
+      override = css`
+        position: absolute;
+        bottom: 15%;
+        right: 57%;
+    `;
+    }
     return (
       <div className="sweet-loading" style={{display: 'flex'}}>
         <BeatLoader

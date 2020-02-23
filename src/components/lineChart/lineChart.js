@@ -5,29 +5,29 @@ import {
 
 import Spinner from '../spinner';
 
-const data = [
-  {
-    name: 'Page A', uv: 4000, pv: 2400, amt: 2400,
-  },
-  {
-    name: 'Page B', uv: 3000, pv: 1398, amt: 2210,
-  },
-  {
-    name: 'Page C', uv: 2000, pv: 9800, amt: 2290,
-  },
-  {
-    name: 'Page D', uv: 2780, pv: 3908, amt: 2000,
-  },
-  {
-    name: 'Page E', uv: 1890, pv: 4800, amt: 2181,
-  },
-  {
-    name: 'Page F', uv: 2390, pv: 3800, amt: 2500,
-  },
-  {
-    name: 'Page G', uv: 3490, pv: 4300, amt: 2100,
-  },
-];
+// const data = [
+//   {
+//     name: 'Page A', uv: 4000, pv: 2400, amt: 2400,
+//   },
+//   {
+//     name: 'Page B', uv: 3000, pv: 1398, amt: 2210,
+//   },
+//   {
+//     name: 'Page C', uv: 2000, pv: 9800, amt: 2290,
+//   },
+//   {
+//     name: 'Page D', uv: 2780, pv: 3908, amt: 2000,
+//   },
+//   {
+//     name: 'Page E', uv: 1890, pv: 4800, amt: 2181,
+//   },
+//   {
+//     name: 'Page F', uv: 2390, pv: 3800, amt: 2500,
+//   },
+//   {
+//     name: 'Page G', uv: 3490, pv: 4300, amt: 2100,
+//   },
+// ];
 
 const abcStyle = {
   backgroundColor:'#EFEFEF',
@@ -72,9 +72,29 @@ export default class LineChartLayout extends PureComponent {
     const { opacity } = this.state;
     console.log(this.props.refresh)
     console.log(this.props.cpuUtilizationData)
+
+    let tempData = [];
+    let data = [];
+
+
+    if(this.props.cpuUtilizationData){
+      this.props.cpuUtilizationData.forEach(element => {
+        data.push({
+          name:`${new Date(element.timeStamp).getHours() < 12 ? new Date(element.timeStamp).getHours() + ' AM' : (new Date(element.timeStamp).getHours()-12) + ' PM'}`,
+          uv:0,
+          percentage: Math.trunc(((element.total - element.free)/element.total)*100),
+          amt:100
+        });
+      });
+    }
+
+    tempData.forEach((element) => {
+
+    });
+
     return (
       <React.Fragment>
-        {this.props.refresh ? <Spinner loading /> : null}
+        {this.props.refresh ? <Spinner loading graph='line' /> : null}
       <div style={this.props.refresh ? {opacity: '.5'} : null}>
         <LineChart
           width={500}
@@ -89,7 +109,7 @@ export default class LineChartLayout extends PureComponent {
           <YAxis />
           <Tooltip />
           <Legend onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} />
-          <Line type="monotone" dataKey="pv" strokeOpacity={opacity.pv} stroke="#8884d8" activeDot={{ r: 8 }} />
+          <Line type="monotone" dataKey="percentage" strokeOpacity={opacity.pv} stroke="#8884d8" activeDot={{ r: 8 }} />
           {/* <Line type="monotone" dataKey="uv" strokeOpacity={opacity.uv} stroke="#82ca9d" /> */}
         </LineChart>
         {/* <p className="notes">Tips: Hover the legend !</p> */}

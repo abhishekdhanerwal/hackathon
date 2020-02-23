@@ -13,6 +13,7 @@ const connectDb = require('./database');
 
 const app = express();
 const dashboardRouter = require('./dashboard')();
+const reportRouter = require('./report.server')();
 
 app.use(bodyParser.json({limit: '6mb'}));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -32,6 +33,7 @@ app.use(require('webpack-hot-middleware')(compiler));
 })();
 
 app.use('/dashboardReport', dashboardRouter);
+app.use('/report', reportRouter);
 
 
 app.listen(port,function(){
