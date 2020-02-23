@@ -3,6 +3,9 @@ const dashboardRouter = express.Router();
 const request =  require("request");
 
 const UserModel = require('./models/events.model');
+const CpuModel = require('./models/cpu.model');
+
+var os = require('os');
 
 const httpRequest = function(_url, _headers, _req, isIllustration) {
   return new Promise(function(resolve, reject){
@@ -39,6 +42,18 @@ function router() {
         failed:200,
         pending:230
       });
+    });
+
+    dashboardRouter.route('/cpu')
+    .get(async (req, res) => {
+      const Cpu = new CpuModel({
+        timeStamp:new Date().getTime(),
+        total: os.totalmem(),
+        free: os.freemem()
+      });
+      await Cpu.save();
+      const list = await CpuModel.find().exec();
+      res.status(200).json(list);
     });
 
   dashboardRouter.route('/single')

@@ -3,6 +3,8 @@ import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
 
+import Spinner from '../spinner';
+
 const data = [
   {
     name: 'Page A', uv: 4000, pv: 2400, amt: 2400,
@@ -26,6 +28,18 @@ const data = [
     name: 'Page G', uv: 3490, pv: 4300, amt: 2100,
   },
 ];
+
+const abcStyle = {
+  backgroundColor:'#EFEFEF',
+    position: 'fixed',
+    width: '100%',
+    height: '100%',
+    zIndex: '100',
+    top: '0px',
+    left: '0px',
+    opacity: '.5', /* in FireFox */ 
+    filter: 'alpha(opacity=50)' /* in IE */
+}
 
 export default class LineChartLayout extends PureComponent {
 
@@ -56,9 +70,12 @@ export default class LineChartLayout extends PureComponent {
 
   render() {
     const { opacity } = this.state;
-
+    console.log(this.props.refresh)
+    console.log(this.props.cpuUtilizationData)
     return (
-      <div>
+      <React.Fragment>
+        {this.props.refresh ? <Spinner loading /> : null}
+      <div style={this.props.refresh ? {opacity: '.5'} : null}>
         <LineChart
           width={500}
           height={300}
@@ -73,10 +90,11 @@ export default class LineChartLayout extends PureComponent {
           <Tooltip />
           <Legend onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} />
           <Line type="monotone" dataKey="pv" strokeOpacity={opacity.pv} stroke="#8884d8" activeDot={{ r: 8 }} />
-          <Line type="monotone" dataKey="uv" strokeOpacity={opacity.uv} stroke="#82ca9d" />
+          {/* <Line type="monotone" dataKey="uv" strokeOpacity={opacity.uv} stroke="#82ca9d" /> */}
         </LineChart>
-        <p className="notes">Tips: Hover the legend !</p>
+        {/* <p className="notes">Tips: Hover the legend !</p> */}
       </div>
+      </React.Fragment>
     );
   }
 }
